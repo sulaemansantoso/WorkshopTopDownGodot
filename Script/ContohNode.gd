@@ -1,19 +1,19 @@
 extends Node2D
 
-func _enter_tree():
-	pass
+var scale_factor = 1
 
-func _exit_tree():
-	pass
+onready var kamera = $Tomat/Camera2D
 
 func _ready():
-	pass
-	
-func _physics_process(delta):
-	pass
+	kamera.zoom = Vector2(scale_factor, scale_factor)
 
-func _input(event):
-	pass
-	
-func _draw():
-	pass
+
+func _process(delta):
+	if (Input.is_action_pressed("ui_left")) :
+		scale_factor -= 0.01
+		kamera.zoom = Vector2(scale_factor, scale_factor)
+		pass
+	elif (Input.is_action_pressed("ui_right")) :
+		scale_factor += 0.01
+		kamera.zoom = Vector2(scale_factor, scale_factor)
+		pass
