@@ -14,6 +14,10 @@ config/name="Workshop Top Down"
 run/main_scene="res://Scene/ContohNode.tscn"
 config/icon="res://icon.png"
 
+[global]
+
+gravity=false
+
 [input]
 
 Atas={
@@ -36,6 +40,15 @@ Kanan={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_render/layer_1="Pemain"
+2d_render/layer_2="Tembok"
+2d_render/layer_3="Musuh"
+2d_physics/layer_1="Pemain"
+2d_physics/layer_2="Tembok"
+2d_physics/layer_3="Musuh"
 
 [physics]
 

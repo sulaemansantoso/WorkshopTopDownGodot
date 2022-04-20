@@ -1,6 +1,6 @@
-extends Sprite
+extends KinematicBody2D
 
-export var speed = 3
+export var speed = 10000
 
 func _input(event):
 	if (event is InputEventMouseButton):
@@ -10,7 +10,6 @@ func _input(event):
 
 func _process(delta):
 #	var character = get_node("Character")
-	var character = $Character
 	if(Input.is_action_just_pressed("ui_accept")):
 		print("pressed")
 	if(Input.is_action_just_released("ui_accept")):
@@ -31,5 +30,14 @@ func _process(delta):
 	if (Input.is_action_pressed("Bawah")):
 		pergerakan += Vector2(0,1)
 		
-	position += pergerakan * speed
+#	position += pergerakan * speed
+
+	
+	var vector_gerak = pergerakan * speed
+	move_and_slide(vector_gerak)
+	
+	if (is_on_wall()):
+		print("nabrak tembok")
+	
+	
 	pass
