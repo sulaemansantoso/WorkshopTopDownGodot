@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Workshop Top Down"
-run/main_scene="res://Scene/ContohNode.tscn"
+run/main_scene="res://ContohNode.tscn"
 config/icon="res://icon.png"
 
 [global]

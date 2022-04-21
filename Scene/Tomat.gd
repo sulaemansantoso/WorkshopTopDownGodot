@@ -34,10 +34,10 @@ func _process(delta):
 
 	
 	var vector_gerak = pergerakan * speed
-	move_and_slide(vector_gerak)
-	
-	if (is_on_wall()):
-		print("nabrak tembok")
+#	move_and_slide(vector_gerak)
+
+	move_and_slide(vector_gerak,Vector2(0,-1), false,4,0.768,true)
+
 	
 	
 	pass

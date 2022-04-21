@@ -9,7 +9,6 @@ radius = 45.2769
 [node name="BuletIjo" type="RigidBody2D"]
 collision_layer = 2
 collision_mask = 7
-linear_damp = 58.852
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
