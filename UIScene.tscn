@@ -1,0 +1,113 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/CoinLives.png" type="Texture" id=1]
+[ext_resource path="res://Assets/apple lives.png" type="Texture" id=2]
+[ext_resource path="res://Resources/DefaultFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://UIScene.gd" type="Script" id=4]
+[ext_resource path="res://Assets/bintang2an.png" type="Texture" id=5]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="PointUI" type="HBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -97.0
+margin_top = 29.0
+margin_right = -37.0
+margin_bottom = 69.0
+
+[node name="TextureRect" type="TextureRect" parent="PointUI"]
+margin_right = 30.0
+margin_bottom = 40.0
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="PointUI"]
+margin_left = 34.0
+margin_top = 13.0
+margin_right = 42.0
+margin_bottom = 27.0
+text = "X"
+
+[node name="PointLabel" type="Label" parent="PointUI"]
+margin_left = 46.0
+margin_top = 4.0
+margin_right = 60.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+
+[node name="LiveUI" type="VBoxContainer" parent="."]
+margin_left = 38.0
+margin_top = 33.0
+margin_right = 159.0
+margin_bottom = 73.0
+
+[node name="Label" type="Label" parent="LiveUI"]
+margin_right = 121.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 3 )
+text = "Sisa Nyawa "
+
+[node name="JumlahNyawa" type="HBoxContainer" parent="LiveUI"]
+margin_top = 35.0
+margin_right = 121.0
+margin_bottom = 66.0
+
+[node name="TextureRect" type="TextureRect" parent="LiveUI/JumlahNyawa"]
+margin_right = 31.0
+margin_bottom = 31.0
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="LiveUI/JumlahNyawa"]
+margin_left = 35.0
+margin_top = 8.0
+margin_right = 43.0
+margin_bottom = 22.0
+text = "X"
+
+[node name="Label2" type="Label" parent="LiveUI/JumlahNyawa"]
+margin_left = 47.0
+margin_right = 61.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 3 )
+text = "0"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -100.0
+margin_top = -100.0
+margin_right = 100.0
+margin_bottom = 100.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer"]
+margin_left = 39.0
+margin_top = 72.0
+margin_right = 160.0
+margin_bottom = 127.0
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/VBoxContainer"]
+margin_right = 121.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 3 )
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 35.0
+margin_right = 121.0
+margin_bottom = 55.0
+custom_colors/font_color = Color( 1, 0.843137, 0.117647, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+text = "Restart Game"
+icon = ExtResource( 5 )
+
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]

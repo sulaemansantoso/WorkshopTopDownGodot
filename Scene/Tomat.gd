@@ -1,6 +1,16 @@
 extends KinematicBody2D
 
 export var speed = 10000
+export var nyawa = 3 
+
+signal pemain_terpukul
+signal pemain_mati
+
+func terluka(point) :
+	nyawa -= point
+	emit_signal("pemain_terpukul", nyawa)
+	if (nyawa <=0 ):
+		emit_signal("pemain_mati")
 
 func _input(event):
 	if (event is InputEventMouseButton):
@@ -15,19 +25,22 @@ func _process(delta):
 	if(Input.is_action_just_released("ui_accept")):
 		print("release")
 	
-	look_at(get_global_mouse_position())
 	var pergerakan = Vector2(0,0)
 	
 	if (Input.is_action_pressed("Kiri")):
+		look_at( position + Vector2(-1,0))
 		pergerakan = Vector2(-1,0)
 		
 	if (Input.is_action_pressed("Kanan")):
+		look_at( position + Vector2(1,0))
 		pergerakan = Vector2(1,0)
 		
 	if (Input.is_action_pressed("Atas")):
+		look_at( position + Vector2(0,-1))
 		pergerakan += Vector2(0,-1)
 		
 	if (Input.is_action_pressed("Bawah")):
+		look_at( position + Vector2(0,1))
 		pergerakan += Vector2(0,1)
 		
 #	position += pergerakan * speed
