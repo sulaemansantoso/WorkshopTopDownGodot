@@ -12,11 +12,19 @@ config_version=4
 
 config/name="Workshop Top Down"
 run/main_scene="res://Level/Level1.tscn"
+boot_splash/image="res://Assets/Logo.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
 
 [autoload]
 
 Statistik="*res://Scene/Statistik.gd"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [global]
 
